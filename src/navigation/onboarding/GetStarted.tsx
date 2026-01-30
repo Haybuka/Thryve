@@ -47,15 +47,15 @@ const GetStarted = ({ navigation }: GetStartedScreenProps) => {
 
                 <View style={styles.layerView}>
                     <View style={styles.indicatorContainer}>
-                        {[1, 2, 3].map((id) => (
-                            <>
-                                {carouselIndex === id ? (
-                                    <View key={id} style={styles.barSwipe} />
-                                ) : (
-                                    <View key={id} style={styles.circleSwipe} />
-                                )}
-                            </>
-                        ))}
+                        {[1, 2, 3].map((id) =>
+
+                        (carouselIndex === id ? (
+                            <View key={id} style={styles.barSwipe} />
+                        ) : (
+                            <View key={id} style={styles.circleSwipe} />
+                        ))
+
+                        )}
                     </View>
                     <Carousel
                         ref={ref}

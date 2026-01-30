@@ -2,6 +2,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { StageSelectionScreenProps } from './types'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import StageCard from './components/StageCard'
 
 
 type Stage = {
@@ -11,8 +12,8 @@ type Stage = {
     icon: string;
 }
 
-const StageSelection = ({ navigation }: StageSelectionScreenProps) => {
-    console.log(navigation, 'nav');
+const StageSelection = ({ }: StageSelectionScreenProps) => {
+
     const stages = [
         {
             id: 1,
@@ -53,23 +54,10 @@ const StageSelection = ({ navigation }: StageSelectionScreenProps) => {
             </View>
             <View style={styles.stageContainer}>
                 {stages.map((stage) => (
-                    <TouchableOpacity key={stage.id} onPress={() => handleStageSelect(stage)}>
-                        <View style={styles.stageCard}>
-                            {/* <Image source={require(`../../assets/images/stageSelection/${stage.icon}.png`)} style={{ width: 60, height: 60, resizeMode: 'contain' }} /> */}
-                            <View >
-                                <Text style={styles.stageCardText}>{stage.title}</Text>
-                                <Text style={styles.stageCardDescription}>{stage.description} </Text>
-                            </View>
-                            <View style={[styles.stageCardCheckbox, selectedStage.id === stage.id ? styles.stageCardCheckbox_selected : null]}>
-                                {selectedStage.id === stage.id && (
-                                    <View style={[{ backgroundColor: '#FF6F91', width: 12, height: 12, borderRadius: 8 }]} />
-                                )}
-                            </View>
-                        </View>
-                    </TouchableOpacity>
+                    <StageCard key={stage.id} stage={stage} selectedStage={selectedStage} handleCardSelected={handleStageSelect} />
                 ))}
             </View>
-            <TouchableOpacity style={styles.btn} accessibilityRole='button' disabled>
+            <TouchableOpacity style={styles.btn} accessibilityRole='button'>
                 <Text style={styles.btn_text}>Continue</Text>
             </TouchableOpacity>˝
         </SafeAreaView>
@@ -82,63 +70,18 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        padding: 12,
+        padding: 14,
         backgroundColor: '#FAFAFA'
     },
     preg_logo: { width: 60, height: 80, resizeMode: 'contain' },
     bannerContainer: {
-        // flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
     },
     stageContainer: {
         marginVertical: 40,
     },
-    stageCard: {
-        marginBottom: 20,
-        padding: 4,
-        backgroundColor: '#FFFFFF',
-        borderRadius: 12,
-        shadowColor: '#00000071',
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.15,
-        shadowRadius: 2.84,
-        elevation: 3,
-        paddingHorizontal: 16,
-        paddingVertical: 12,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center'
-    },
-    stageCardText: {
-        fontWeight: 'bold',
-        fontSize: 14,
-        marginBottom: 4,
-       
-    },
-    stageCardDescription: {
-        color: '#556882',
-        fontSize: 12,
-    },
-    stageCardCheckbox: {
-        width: 18,
-        height: 18,
-        borderWidth: 1,
-        borderColor: '#EEEEEE',
-        borderRadius: 10,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    stageCardCheckbox_selected: {
-        borderColor: '#FF6F91',
-        // width: 12,
-        // height: 12,
-        // borderRadius: 6,
-        // margin: 3
-    },
+
     banner: {
         justifyContent: "center",
         alignItems: 'center',
