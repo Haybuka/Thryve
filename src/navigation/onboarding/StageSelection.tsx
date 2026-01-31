@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        padding: 14,
+        padding: 20,
         backgroundColor: '#FAFAFA'
     },
     preg_logo: { width: 60, height: 80, resizeMode: 'contain' },

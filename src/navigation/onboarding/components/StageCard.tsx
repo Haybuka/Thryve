@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { AuthCalender } from '../../../assets/icons';
+import AuthIconSelect from './AuthIconSelect';
 
 
 type StageCardProps = {
@@ -14,15 +14,17 @@ type StageCardProps = {
     selectedStage: StageCardProps['stage'];
 }
 
+
+
 const StageCard = ({ stage, selectedStage, handleCardSelected }: StageCardProps) => {
+
     return (
         <Pressable onPress={() => handleCardSelected(stage)}>
             <View style={[styles.stageCard, selectedStage.id === stage.id ? styles.stageCardActive : null]}>
 
 
                 <View style={styles.iconContainer}>
-                    <AuthCalender width={24} height={24} />
-
+                    <AuthIconSelect icon={stage.icon} />
                 </View>
                 <View style={styles.stageInnerContainer}>
                     <Text style={styles.stageCardText}>{stage.title}</Text>
@@ -32,6 +34,7 @@ const StageCard = ({ stage, selectedStage, handleCardSelected }: StageCardProps)
                     {selectedStage.id === stage.id && (
                         <View style={styles.stageCardCheckbox_inner} />
                     )}
+                    
                 </View>
             </View>
         </Pressable>
@@ -42,7 +45,7 @@ export default StageCard
 
 const styles = StyleSheet.create({
     stageInnerContainer: { flex: 1, },
-    iconContainer : {
+    iconContainer: {
         width: 40,
         height: 40,
         borderRadius: 9,
@@ -65,7 +68,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        gap:10
+        gap: 10
     },
     stageCardActive: {
         borderWidth: 1,
@@ -81,8 +84,6 @@ const styles = StyleSheet.create({
     stageCardDescription: {
         color: '#556882',
         fontSize: 13,
-        // flex: 1,       // take remaining space
-        // marginRight: 12
     },
     stageCardCheckbox: {
         width: 16,

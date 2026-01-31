@@ -1,9 +1,10 @@
-import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import type { ICarouselInstance } from "react-native-reanimated-carousel";
 import React, { useRef, useState } from 'react';
 import { GetStartedScreenProps } from './types';
+import Button from '@/components/Button';
 
 
 const GetStarted = ({ navigation }: GetStartedScreenProps) => {
@@ -61,7 +62,9 @@ const GetStarted = ({ navigation }: GetStartedScreenProps) => {
                         ref={ref}
                         data={imageCarousel}
                         width={400}
-                        height={400}
+                        height={200}
+                        autoPlay
+                        autoPlayInterval={5000}
                         onSnapToItem={(index) => {
                             setCarouselIndex(index + 1);
                             setBackgroundImage(imageCarousel[index].src);
@@ -73,14 +76,15 @@ const GetStarted = ({ navigation }: GetStartedScreenProps) => {
                                     <Text style={styles.lead_text}>{item.lead_text[1]}</Text>
                                 </View>
                                 <Text style={styles.sub_text}>{item.sub_text}</Text>
-                                <TouchableOpacity style={styles.btn} accessibilityRole='button' onPress={handleGetStarted}>
-                                    <Text style={styles.btn_text}>Get Started </Text>
-                                </TouchableOpacity>
-                                <Text style={styles.sub_text}>Already have an account? <Text style={styles.login_text}>Sign In</Text></Text>
 
                             </View>
                         )}
                     />
+
+                    <View style={styles.btnContainer}>
+                        <Button label='Get Started' onPress={handleGetStarted} />
+                    </View>
+                    <Text style={styles.sub_text}>Already have an account? <Text style={styles.login_text}>Sign In</Text></Text>
 
                 </View>
             </ImageBackground>
@@ -99,12 +103,16 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-end',
         backgroundColor: '#00000063',
-        alignItems: 'center'
+        alignItems: 'center',
+        paddingBottom: 50
     },
     viewContainer: {
         padding: 24,
     },
-    // viewCarousel: {  },
+    btnContainer : {
+         paddingHorizontal: 20,
+        alignSelf : 'stretch',
+    },
     lead_text: {
         textAlign: 'center',
         fontSize: 30,
@@ -118,24 +126,6 @@ const styles = StyleSheet.create({
         fontFamily: 'Inter',
         color: '#fff',
         lineHeight: 25
-    },
-    btn: {
-
-        backgroundColor: '#FF6F91',
-        paddingVertical: 12,
-        paddingHorizontal: 32,
-        overflow: 'hidden',
-        borderRadius: 12,
-        marginTop: 14
-    },
-
-    btn_text: {
-        color: '#fff',
-        textAlign: 'center',
-        fontSize: 16,
-        fontWeight: '500',
-        fontFamily: 'Inter'
-
     }
     , login_text: {
         textDecorationStyle: 'dashed',
