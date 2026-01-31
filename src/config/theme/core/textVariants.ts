@@ -20,7 +20,17 @@ const textVariants = {
         fontFamily: font.family.bold,
         color: 'textPrimary'
     },
-    
+    h3: {
+        fontSize: font.size.base,
+        fontWeight: 'bold',
+        fontFamily: font.family.bold,
+        color: 'textPrimary'
+    },
+    h6: {
+        fontSize: font.size.smallRegular,
+        fontFamily: font.family.primary,
+        color: 'textPrimary'
+    }
 
 }
 

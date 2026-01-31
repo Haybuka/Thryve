@@ -1,9 +1,11 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { StageSelectionScreenProps } from './types'
-import { SafeAreaView } from 'react-native-safe-area-context'
 import StageCard from './components/StageCard'
 import Button from '@/components/Button'
+import Container from '@/components/Container'
+import Box from '@/components/Box'
+import Text from '@/components/Text'
+import Image from '@/components/Image'
 
 
 type Stage = {
@@ -43,65 +45,32 @@ const StageSelection = ({ }: StageSelectionScreenProps) => {
     }
     return (
 
-        <SafeAreaView style={styles.container} edges={['left', 'right']}>
+        <Container>
 
-            <View style={styles.bannerContainer}>
+            <Box flex={1} padding='lsx' backgroundColor='authBackgroundSecondary'>
+                <Box justifyContent='center' alignItems='center'>
 
-                <View style={styles.banner}>
-                    <Image source={require('../../assets/images/splashScreen/preg_logo.png')} style={styles.preg_logo} />
-                    <Text style={styles.banner_text}>Choose your stage</Text>
-                    <Text style={styles.banner_subText}>We’ll personalize your experience based on where you are in your journey.</Text>
-                </View>
-            </View>
-            <View style={styles.stageContainer}>
-                {stages.map((stage) => (
-                    <StageCard key={stage.id} stage={stage} selectedStage={selectedStage} handleCardSelected={handleStageSelect} />
-                ))}
-            </View>
-          
-            <View style={styles.btnContainer}>
-                <Button label='Get Started'  />
-            </View>
-        </SafeAreaView>
+                    <Box padding='l' justifyContent='center' alignItems='center' >
+                        <Image width={60} height={80} resizeMode='contain' source={require('@/assets/images/splashScreen/preg_logo.png')} />
+                        <Text textAlign='center' marginVertical={'sm'} variant='h3' color='blueBase'>Choose your stage</Text>
+                        <Text textAlign='center' variant='h6' color='muted' >We’ll personalize your experience based on where you are in your journey.</Text>
+                    </Box>
+                </Box>
+                <Box marginVertical='xl'>
+                    {stages.map((stage) => (
+                        <StageCard key={stage.id} stage={stage} selectedStage={selectedStage} handleCardSelected={handleStageSelect} />
+                    ))}
+                </Box>
+
+                <Box alignSelf='stretch' >
+                    <Button label='Get Started' />
+
+                </Box>
+
+            </Box>
+        </Container >
     )
 }
 
 export default StageSelection
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        padding: 20,
-        backgroundColor: '#FAFAFA'
-    },
-    preg_logo: { width: 60, height: 80, resizeMode: 'contain' },
-    bannerContainer: {
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    stageContainer: {
-        marginVertical: 40,
-    },
-
-    banner: {
-        justifyContent: "center",
-        alignItems: 'center',
-        padding: 24
-    },
-    banner_text: {
-        textAlign: 'center',
-        fontWeight: 'bold',
-        fontFamily: 'Inter',
-        fontSize: 20,
-        marginVertical: 10
-    },
-    banner_subText: {
-        textAlign: 'center',
-        color: '#556882'
-    },
-    btnContainer: {
-        alignSelf: 'stretch',
-    }
-
-})

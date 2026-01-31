@@ -6,12 +6,14 @@ const palette = {
 
     blue: '#001739',
     bluePrimary: '#001C44',
-    blueMuted: '#556882',
     blueSecondary: '#001739',
+    blueBase : '#00132D',
+    blueMuted: '#556882',
 
     secondary: '#FF9671',
     background: '#00000063',
-    
+    backgroundSecondary : '#FAFAFA',
+
     overlayBackground: '#00000063',
 
     white: '#FFFFFF',

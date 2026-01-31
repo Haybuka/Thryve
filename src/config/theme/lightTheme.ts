@@ -19,8 +19,10 @@ const lightTheme = createTheme({
         textPrimary: palette.white,
         authTextPrimary: palette.blue,
         authTextSecondary: palette.blueMuted,
-        authBackground: palette.white,
 
+        muted: palette.blueMuted,
+        authBackground: palette.white,
+        authBackgroundSecondary: palette.backgroundSecondary,
         light: palette.white,
         dark: palette.black,
         buttonDisabled: palette.pinkDisabled,

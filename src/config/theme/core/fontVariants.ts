@@ -5,8 +5,9 @@
 }
 
  const fontSize = {
+     smallRegular: 14,
     regular: 16,
-    smallRegular: 14,
+    base : 20,
     headerBase: 30
 }
 
