@@ -11,6 +11,8 @@ const palette = {
 
     secondary: '#FF9671',
     background: '#00000063',
+    
+    overlayBackground: '#00000063',
 
     white: '#FFFFFF',
     whiteSecondary: '#CCCCCC',

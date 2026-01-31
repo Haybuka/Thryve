@@ -3,6 +3,7 @@ const spacing = {
     s: 8,
     sm: 12,
     m: 16,
+    lsx : 20,
     l: 24,
     ls: 32,
     xl: 40,

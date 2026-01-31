@@ -1,10 +1,11 @@
 
 
-import { breakpoints, buttonVariants, font, palette, spacing, textVariants } from "@/config/theme/core";
+import { breakpoints, buttonVariants, font, palette, spacing, textVariants, boxVariants } from "@/config/theme/core";
 import { createTheme } from "@shopify/restyle";
 
 
 const commonConfig = {
+    boxVariants,
     breakpoints,
     spacing,
     buttonVariants,
