@@ -1,10 +1,12 @@
-import { ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, StyleSheet, View } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import type { ICarouselInstance } from "react-native-reanimated-carousel";
 import React, { useRef, useState } from 'react';
 import { GetStartedScreenProps } from './types';
 import Button from '@/components/Button';
+import Text from '@/components/Text';
+import Box from '@/components/Box';
 
 
 const GetStarted = ({ navigation }: GetStartedScreenProps) => {
@@ -57,6 +59,7 @@ const GetStarted = ({ navigation }: GetStartedScreenProps) => {
                         ))
 
                         )}
+                        <Box />
                     </View>
                     <Carousel
                         ref={ref}
@@ -72,10 +75,11 @@ const GetStarted = ({ navigation }: GetStartedScreenProps) => {
                         renderItem={({ item }) => (
                             <View style={styles.viewContainer} key={item.id}>
                                 <View>
-                                    <Text style={styles.lead_text}> {item.lead_text[0]}</Text>
-                                    <Text style={styles.lead_text}>{item.lead_text[1]}</Text>
+                                    <Text variant='onboardingLeadText' style={styles.lead_text}> {item.lead_text[0]}</Text>
+                                    <Text variant='onboardingLeadText' style={styles.lead_text}>{item.lead_text[1]}</Text>
+                                   
                                 </View>
-                                <Text style={styles.sub_text}>{item.sub_text}</Text>
+                                <Text variant='onboardingSubText' style={styles.sub_text}>{item.sub_text}</Text>
 
                             </View>
                         )}
@@ -84,7 +88,7 @@ const GetStarted = ({ navigation }: GetStartedScreenProps) => {
                     <View style={styles.btnContainer}>
                         <Button label='Get Started' onPress={handleGetStarted} />
                     </View>
-                    <Text style={styles.sub_text}>Already have an account? <Text style={styles.login_text}>Sign In</Text></Text>
+                    <Text variant='onboardingSubText' style={styles.sub_text}>Already have an account? <Text color='primary' style={styles.login_text}>Sign In</Text></Text>
 
                 </View>
             </ImageBackground>
@@ -115,23 +119,15 @@ const styles = StyleSheet.create({
     },
     lead_text: {
         textAlign: 'center',
-        fontSize: 30,
-        fontWeight: '700',
-        fontFamily: 'Inter',
-        color: '#fff'
     },
     sub_text: {
         textAlign: 'center',
-        marginVertical: 10,
-        fontFamily: 'Inter',
-        color: '#fff',
+        marginVertical : 10,
         lineHeight: 25
     }
     , login_text: {
         textDecorationStyle: 'dashed',
         textDecorationLine: 'underline',
-        color: '#FF6F91',
-        fontFamily: 'Inter'
     },
     indicatorContainer: { flexDirection: 'row', justifyContent: 'center', gap: 10, alignItems: "center" },
     circleSwipe: {

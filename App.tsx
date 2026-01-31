@@ -12,10 +12,9 @@ import {
 } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { ThemeProvider } from '@shopify/restyle';
 import SplashScreen from './src/navigation';
 import OnboardingNavigator from './src/navigation/onboarding';
-import { lightTheme } from '@/config/theme';
+import ThemeProvider from '@/config/theme/Provider';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -34,7 +33,7 @@ function AppContent() {
 
   return (
     <GestureHandlerRootView>
-      <ThemeProvider theme={lightTheme}>
+      <ThemeProvider>
         <NavigationContainer>
           <View style={styles.container}>
 

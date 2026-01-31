@@ -1,8 +1,9 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { StageSelectionScreenProps } from './types'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import StageCard from './components/StageCard'
+import Button from '@/components/Button'
 
 
 type Stage = {
@@ -57,9 +58,10 @@ const StageSelection = ({ }: StageSelectionScreenProps) => {
                     <StageCard key={stage.id} stage={stage} selectedStage={selectedStage} handleCardSelected={handleStageSelect} />
                 ))}
             </View>
-            <TouchableOpacity style={styles.btn} accessibilityRole='button'>
-                <Text style={styles.btn_text}>Continue</Text>
-            </TouchableOpacity>˝
+          
+            <View style={styles.btnContainer}>
+                <Button label='Get Started'  />
+            </View>
         </SafeAreaView>
     )
 }
@@ -98,22 +100,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#556882'
     },
-    btn: {
-
-        backgroundColor: '#FF6F91',
-        paddingVertical: 12,
-        paddingHorizontal: 32,
-        overflow: 'hidden',
-        borderRadius: 12,
-        marginTop: 14
-    },
-    btn_text: {
-        color: '#fff',
-        textAlign: 'center',
-        fontSize: 16,
-        fontWeight: '500',
-        fontFamily: 'Inter'
-
+    btnContainer: {
+        alignSelf: 'stretch',
     }
 
 })

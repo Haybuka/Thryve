@@ -1,10 +1,6 @@
 import { Theme } from "@/config/theme";
-import { createText } from "@shopify/restyle";
+import { createBox } from "@shopify/restyle";
 
-const Text = createText<Theme>();
+const Box = createBox<Theme>();
 
-Text.defaultProps = Text.defaultProps || {};
-Text.defaultProps.allowFontScaling = false;
-
-
-export default Text
+export default Box
