@@ -63,7 +63,7 @@ const StageSelection = ({ }: StageSelectionScreenProps) => {
                 </Box>
 
                 <Box alignSelf='stretch' >
-                    <Button label='Get Started' />
+                    <Button label='Continue' />
 
                 </Box>
 
