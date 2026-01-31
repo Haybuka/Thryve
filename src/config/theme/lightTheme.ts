@@ -19,7 +19,7 @@ const lightTheme = createTheme({
         textPrimary: palette.white,
         authTextPrimary: palette.blue,
         authTextSecondary: palette.blueMuted,
-
+        iconBackground : palette.pinkSecondary,
         muted: palette.blueMuted,
         authBackground: palette.white,
         authBackgroundSecondary: palette.backgroundSecondary,

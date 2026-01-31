@@ -1,6 +1,10 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text,View } from 'react-native'
 import React from 'react'
 import AuthIconSelect from './AuthIconSelect';
+import IconBox from '@/components/IconBox';
+import Box from '@/components/Box';
+import {StageBox} from '@/components/Card';
+import RadioIndicator from '@/components/RadioIndicator';
 
 
 type StageCardProps = {
@@ -20,23 +24,24 @@ const StageCard = ({ stage, selectedStage, handleCardSelected }: StageCardProps)
 
     return (
         <Pressable onPress={() => handleCardSelected(stage)}>
-            <View style={[styles.stageCard, selectedStage.id === stage.id ? styles.stageCardActive : null]}>
+            <StageBox variant='stageCard'  active={selectedStage.id === stage.id}>
 
 
-                <View style={styles.iconContainer}>
+                <IconBox  variant='iconBox' backgroundColor='iconBackground' width={40} height={40} mr='xs' >
                     <AuthIconSelect icon={stage.icon} />
-                </View>
-                <View style={styles.stageInnerContainer}>
+                </IconBox >
+                <Box flex={1}>
                     <Text style={styles.stageCardText}>{stage.title}</Text>
                     <Text style={styles.stageCardDescription}>{stage.description} </Text>
-                </View>
+                </Box>
                 <View style={[styles.stageCardCheckbox, selectedStage.id === stage.id ? styles.stageCardCheckbox_selected : null]}>
                     {selectedStage.id === stage.id && (
                         <View style={styles.stageCardCheckbox_inner} />
                     )}
                     
                 </View>
-            </View>
+                <RadioIndicator width={20} height={20}  selected={selectedStage.id === stage.id} />
+            </StageBox>
         </Pressable>
     )
 }
@@ -44,37 +49,8 @@ const StageCard = ({ stage, selectedStage, handleCardSelected }: StageCardProps)
 export default StageCard
 
 const styles = StyleSheet.create({
-    stageInnerContainer: { flex: 1, },
-    iconContainer: {
-        width: 40,
-        height: 40,
-        borderRadius: 9,
-        backgroundColor: '#FFF0F3',
-        justifyContent: 'center',
-        alignItems: 'center',
-        // marginRight: 12
-    },
-    stageCard: {
-        marginBottom: 20,
-        backgroundColor: '#FFFFFF',
-        borderRadius: 8,
-        shadowColor: '#00000071',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.15,
-        shadowRadius: 2.84,
-        elevation: 3,
-        paddingHorizontal: 10,
-        paddingVertical: 24,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        gap: 10
-    },
-    stageCardActive: {
-        borderWidth: 1,
-        borderColor: '#FF6F91',
-        borderRadius: 10,
-    },
+   
+   
     stageCardText: {
         fontWeight: 'bold',
         fontSize: 14,

@@ -2,7 +2,7 @@ const palette = {
     pink: '#FF6F91',
     pinkMuted: '#FFE2E9',
     pinkDisabled: '#FFB7C8',
-
+    pinkSecondary : '#FFF0F3',
 
     blue: '#001739',
     bluePrimary: '#001C44',
@@ -16,11 +16,17 @@ const palette = {
 
     overlayBackground: '#00000063',
 
+    gray : '',
+
+
     white: '#FFFFFF',
     whiteSecondary: '#CCCCCC',
 
     black: '#000000',
     blackSecondary: '#060606',
+    shadow : '#00000071',
+
+    transparent : 'none'
 }
 
 export default palette;

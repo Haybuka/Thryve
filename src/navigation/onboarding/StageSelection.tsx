@@ -1,3 +1,4 @@
+import { Image, StyleSheet, } from 'react-native'
 import React from 'react'
 import { StageSelectionScreenProps } from './types'
 import StageCard from './components/StageCard'
@@ -5,7 +6,6 @@ import Button from '@/components/Button'
 import Container from '@/components/Container'
 import Box from '@/components/Box'
 import Text from '@/components/Text'
-import Image from '@/components/Image'
 
 
 type Stage = {
@@ -51,7 +51,7 @@ const StageSelection = ({ }: StageSelectionScreenProps) => {
                 <Box justifyContent='center' alignItems='center'>
 
                     <Box padding='l' justifyContent='center' alignItems='center' >
-                        <Image width={60} height={80} resizeMode='contain' source={require('@/assets/images/splashScreen/preg_logo.png')} />
+                        <Image source={require('@/assets/images/splashScreen/preg_logo.png')} style={styles.preg_logo} />
                         <Text textAlign='center' marginVertical={'sm'} variant='h3' color='blueBase'>Choose your stage</Text>
                         <Text textAlign='center' variant='h6' color='muted' >We’ll personalize your experience based on where you are in your journey.</Text>
                     </Box>
@@ -74,3 +74,10 @@ const StageSelection = ({ }: StageSelectionScreenProps) => {
 
 export default StageSelection
 
+const styles = StyleSheet.create({
+
+    preg_logo: { width: 60, height: 80, resizeMode: 'contain' },
+
+
+
+})
