@@ -26,6 +26,11 @@ const textVariants = {
         fontFamily: font.family.bold,
         color: 'textPrimary'
     },
+    h5 : {
+       fontSize: font.size.smallRegular,
+        fontFamily: font.family.primary,
+        color: 'textPrimary'
+    },
     h6: {
         fontSize: font.size.smallRegular,
         fontFamily: font.family.primary,

@@ -17,7 +17,7 @@ const palette = {
     overlayBackground: '#00000063',
 
     gray : '',
-
+    grayDisabled: '#EEE',
 
     white: '#FFFFFF',
     whiteSecondary: '#CCCCCC',

@@ -33,10 +33,7 @@ const boxVariants = {
   },
   //Radio Button
   radio: {
-    // width: spacing.m,
-    // height: spacing.m,
     borderWidth: 1,
-    // borderColor: 'pink',
     borderRadius: spacing.m/2,
     justifyContent: 'center',
     alignItems: 'center',

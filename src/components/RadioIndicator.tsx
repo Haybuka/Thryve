@@ -36,7 +36,7 @@ const RadioIndicator: React.FC<Props> = ({ selected, label, onPress, width=16,he
       accessibilityLabel={label}
       accessibilityHint="Double tap to select"
     // eslint-disable-next-line react-native/no-inline-styles
-    style={{width,height,borderRadius : height /2, borderColor : selected ? 'pink' : 'transparent'}}
+    style={{width,height,borderRadius : height /2, borderColor : selected ? 'pink' : 'muted'}}
     >
       {selected && (
         <RadioBox

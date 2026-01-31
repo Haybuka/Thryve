@@ -8,7 +8,8 @@
      smallRegular: 14,
     regular: 16,
     base : 20,
-    headerBase: 30
+    headerBase: 30,
+    small : 12
 }
 
 const font = {
