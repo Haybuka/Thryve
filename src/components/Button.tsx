@@ -15,7 +15,7 @@ type Props = BaseButtonProps & {
 }
 const Button: React.FC<Props> = ({ isLoading, icon, label, labelStyle, loadingIndicatorColor, ...props }) => {
     return (
-        <BaseButton  accessibilityRole='button' variant='primary' {...props}>
+        <BaseButton  accessibilityRole='button' variant={!props.disabled ? 'primary' :'disabled'} {...props}>
             {icon && <View style={styles.icon}>{icon}</View>}
             <Text style={[styles.btnText, labelStyle]}>{label} </Text>
             {isLoading && (<View>

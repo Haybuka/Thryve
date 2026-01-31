@@ -38,7 +38,7 @@ const StageSelection = ({ }: StageSelectionScreenProps) => {
         },
     ]
 
-    const [selectedStage, setSelectedStage] = React.useState<Stage>(stages[0]);
+    const [selectedStage, setSelectedStage] = React.useState<Stage>({} as Stage);
 
     const handleStageSelect = (stage: Stage) => {
         setSelectedStage(stage);
@@ -63,7 +63,7 @@ const StageSelection = ({ }: StageSelectionScreenProps) => {
                 </Box>
 
                 <Box alignSelf='stretch' >
-                    <Button label='Continue' />
+                    <Button label='Continue'  />
 
                 </Box>
 
