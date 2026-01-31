@@ -2,12 +2,12 @@ import { ImageBackground, StyleSheet, View } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import type { ICarouselInstance } from "react-native-reanimated-carousel";
 import React, { useRef, useState } from 'react';
-import { GetStartedScreenProps } from './types';
 import Button from '@/components/Button';
 import Text from '@/components/Text';
 import AuthCarouselIndicator from '@/components/AuthCarouselIndicator';
 import Container from '@/components/Container';
 import Box from '@/components/Box';
+import { GetStartedScreenProps } from '@/navigation/onboarding/types';
 
 
 const GetStarted = ({ navigation }: GetStartedScreenProps) => {

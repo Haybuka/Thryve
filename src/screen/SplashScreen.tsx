@@ -30,9 +30,9 @@ const SplashScreen = ({ children }: React.PropsWithChildren) => {
     return (
         <View style={styles.container}>
             {showRealSplash ? (
-                <Image source={require('../assets/images/splashScreen/preg_logo.png')} style={styles.preg_logo} />
+                <Image source={require('@/assets/images/splashScreen/preg_logo.png')} style={styles.preg_logo} />
             ) : (
-                <Image source={require('../assets/images/splashScreen/preg_logo_full.png')} style={styles.preg_logo_full} />
+                <Image source={require('@/assets/images/splashScreen/preg_logo_full.png')} style={styles.preg_logo_full} />
             )}
 
 

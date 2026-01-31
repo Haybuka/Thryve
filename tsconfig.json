@@ -10,7 +10,8 @@
       "@screens/*": ["src/screens/*"],
       "@utils/*": ["src/utils/*"],
       "@theme/*": ["src/config/theme/*"],
-      "@api/*": ["src/api/*"]
+      "@api/*": ["src/api/*"],
+      "@views/*": ["src/views/*"],
     }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "**/*.ts", "**/*.tsx", "**/*.d.ts"],

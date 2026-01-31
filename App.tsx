@@ -12,9 +12,10 @@ import {
 } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import SplashScreen from './src/navigation';
+// import SplashScreen from './src/navigation';
 import OnboardingNavigator from './src/navigation/onboarding';
 import ThemeProvider from '@/config/theme/Provider';
+import SplashScreen from '@/screen/SplashScreen';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
