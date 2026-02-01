@@ -1,7 +1,6 @@
 import {
   KeyboardAvoidingView,
   Platform,
-  StatusBar,
   StyleSheet,
 } from 'react-native';
 import React from 'react';
@@ -14,7 +13,7 @@ type Props = React.PropsWithChildren<{
 const Container: React.FC<Props> = ({ children,backgroundColor }) => {
   return (
     <SafeAreaView style={[styles.container, {backgroundColor}]} edges={['top', 'bottom']}>
-      <StatusBar  barStyle="dark-content" />
+      
 
       <KeyboardAvoidingView
         style={styles.container}
