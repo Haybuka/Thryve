@@ -21,7 +21,7 @@ const StageBox: React.FC<StageBoxProps> = ({ active, ...props }) => {
       shadowColor={'shadow'}
       style={styles.items}
       {...props}
-      borderWidth={active ? 1 : 0}
+      borderWidth={active ? 2 : 0}
       borderColor={active ? 'pink' : 'transparent'}
 
     />

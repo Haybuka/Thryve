@@ -16,6 +16,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import OnboardingNavigator from './src/navigation/onboarding';
 import ThemeProvider from '@/config/theme/Provider';
 import SplashScreen from '@/screen/SplashScreen';
+import MainNavigator from '@/navigation/main';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -43,7 +44,8 @@ function AppContent() {
             templateFileName="App.tsx"
             safeAreaInsets={safeAreaInsets}
           /> */}
-              <OnboardingNavigator />
+              {/* <OnboardingNavigator /> */}
+              <MainNavigator />
             </SplashScreen>
           </View>
         </NavigationContainer>

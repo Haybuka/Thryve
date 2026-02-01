@@ -15,7 +15,7 @@ type Stage = {
     icon: string;
 }
 
-const StageSelection = ({ }: StageSelectionScreenProps) => {
+const StageSelection = ({ navigation }: StageSelectionScreenProps) => {
 
     const stages = [
         {
@@ -43,6 +43,10 @@ const StageSelection = ({ }: StageSelectionScreenProps) => {
     const handleStageSelect = (stage: Stage) => {
         setSelectedStage(stage);
     }
+
+    const handlePageNext = () => {
+        navigation.navigate('Home')
+    }
     return (
 
         <Container>
@@ -63,7 +67,7 @@ const StageSelection = ({ }: StageSelectionScreenProps) => {
                 </Box>
 
                 <Box alignSelf='stretch' >
-                    <Button label='Continue'  />
+                    <Button label='Continue' disabled={!selectedStage.id} onPress={handlePageNext}/>
 
                 </Box>
 
