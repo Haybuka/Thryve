@@ -2,8 +2,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '@/views/Home';
 import CalenderScreen from '@/views/Calender';
 import ExerciseScreen from '@/views/Exercise';
+import { HomeBottomTabParamList } from '@/navigation/main/HomeBottomTab/types';
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator<HomeBottomTabParamList>();
 
 export default function TabNavigator() {
   return (

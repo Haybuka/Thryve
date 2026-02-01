@@ -2,13 +2,13 @@
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { RootStackParamList } from './types';
+import { MainStackParamList } from './types';
 
 
 import TabNavigator from '@/navigation/main/HomeBottomTab';
 import SettingsScreen from '@/views/Settings';
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator<MainStackParamList>();
 const MainNavigator = () => {
 
     return (
