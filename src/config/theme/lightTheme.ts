@@ -28,9 +28,9 @@ const lightTheme = createTheme({
         buttonDisabled: palette.pinkDisabled,
         ...palette,
     },
-    fonts: {
-        family: font.family,
-        size: font.size,
+    typography: {
+        family: font.fontFamily,
+        size: font.fontSize,
     },
     ...commonConfig
 

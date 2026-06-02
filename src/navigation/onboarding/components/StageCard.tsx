@@ -1,12 +1,8 @@
 import { Pressable } from 'react-native'
 import React from 'react'
 import AuthIconSelect from './AuthIconSelect';
-import IconBox from '@/atoms/IconBox';
-import Box from '@/atoms/Box';
-import RadioIndicator from '@/atoms/RadioIndicator';
-import Text from '@/atoms/Text';
-import StageBox from '@/atoms/StageBox';
-
+import { Box, IconBox, StageBox, Text } from '@/components/atoms';
+import RadioIndicator from '@/components/atoms/RadioIndicator';
 
 type StageCardProps = {
     stage: {
@@ -32,7 +28,7 @@ const StageCard = ({ stage, selectedStage, handleCardSelected }: StageCardProps)
                     <AuthIconSelect icon={stage.icon} />
                 </IconBox >
                 <Box flex={1}>
-                    <Text variant='onboardingSubText' fontWeight={'bold'} color='blueSecondary' marginVertical={'xs'} >{stage.title}</Text>
+                    <Text variant='h2' fontWeight={'bold'} color='blueSecondary' marginVertical={'xs'} >{stage.title}</Text>
                     <Text color="blueMuted" fontSize={12} >{stage.description} </Text>
                 </Box>
                 <RadioIndicator width={20} height={20} selected={selectedStage.id === stage.id} />

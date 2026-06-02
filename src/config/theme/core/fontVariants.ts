@@ -1,19 +1,32 @@
- const fontFamily = {
-    primary: 'Inter',
-    bold: 'Inter-Bold',
-    semiBold: 'Inter-SemiBold'
-}
 
- const fontSize = {
-     smallRegular: 14,
-    regular: 16,
-    base : 20,
-    headerBase: 30,
-    small : 12
-}
+const fontFamily = {
+  regular: 'Inter-Regular',
+  semiBold: 'Inter-SemiBold',
+  bold: 'Inter-Bold',
+};
+
+const fontSize = {
+  xs: 12,
+  sm: 14,
+  md: 16,
+  lg: 18,
+  xl: 20,
+
+  h4: 24,
+  h3: 28,
+  h2: 32,
+  h1: 36,
+};
+
+
+
+
+
+
 
 const font = {
-    family: fontFamily,
-    size: fontSize,
-}
+  fontFamily,
+  fontSize,
+};
+
 export default font;

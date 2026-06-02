@@ -1,12 +1,9 @@
-import { Image, StyleSheet, } from 'react-native'
 import React from 'react'
-import { StageSelectionScreenProps } from '../../navigation/onboarding/types'
-import StageCard from '../../navigation/onboarding/components/StageCard'
-import Button from '@/atoms/Button'
-import Container from '@/templates/Container'
-import Box from '@/atoms/Box'
-import Text from '@/atoms/Text'
-
+import { Image, StyleSheet, } from 'react-native'
+import Container from '@/layouts/ScreenContainer'
+import {Box, Text, Button} from '@/components/atoms'
+import StageCard from '@/navigation/onboarding/components/StageCard'
+import { StageSelectionScreenProps } from '@/navigation/onboarding/types'
 
 type Stage = {
     id: number;
@@ -79,9 +76,5 @@ const StageSelection = ({ navigation }: StageSelectionScreenProps) => {
 export default StageSelection
 
 const styles = StyleSheet.create({
-
     preg_logo: { width: 60, height: 80, resizeMode: 'contain' },
-
-
-
 })

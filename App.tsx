@@ -8,15 +8,12 @@
 import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
 import {
   SafeAreaProvider,
-  // useSafeAreaInsets,
 } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-// import SplashScreen from './src/navigation';
-// import OnboardingNavigator from './src/navigation/onboarding';
-// import ThemeProvider from '@/providers/ThemeProvider';
+import OnboardingNavigator from './src/navigation/onboarding';
 import SplashScreen from '@/screen/SplashScreen';
-import MainNavigator from '@/navigation/main';
+// import MainNavigator from '@/navigation/main';
 import RootThemeProvider from '@/providers/ThemeProvider';
 
 function App() {
@@ -24,7 +21,6 @@ function App() {
 
   return (
     <SafeAreaProvider>
-
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <AppContent />
     </SafeAreaProvider>
@@ -45,8 +41,8 @@ function AppContent() {
             templateFileName="App.tsx"
             safeAreaInsets={safeAreaInsets}
           /> */}
-              {/* <OnboardingNavigator /> */}
-              <MainNavigator />
+              <OnboardingNavigator />
+              {/* <MainNavigator /> */}
             </SplashScreen>
           </View>
         </NavigationContainer>

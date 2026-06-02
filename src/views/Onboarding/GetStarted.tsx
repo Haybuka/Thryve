@@ -1,13 +1,10 @@
+import React, { useRef, useState } from 'react';
 import { ImageBackground, StyleSheet, View } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import type { ICarouselInstance } from "react-native-reanimated-carousel";
-import React, { useRef, useState } from 'react';
-import Button from '@/atoms/Button';
-import Text from '@/atoms/Text';
-import AuthCarouselIndicator from '@/atoms/AuthCarouselIndicator';
-import Container from '@/templates/Container';
-import Box from '@/atoms/Box';
 import { GetStartedScreenProps } from '@/navigation/onboarding/types';
+import Container from '@/layouts/ScreenContainer';
+import { Button, Text, AuthCarouselIndicator, Box } from '@/components/atoms';
 
 
 const GetStarted = ({ navigation }: GetStartedScreenProps) => {
@@ -72,20 +69,20 @@ const GetStarted = ({ navigation }: GetStartedScreenProps) => {
                             renderItem={({ item }) => (
                                 <Box padding='l' key={item.id}>
                                     <View>
-                                        <Text variant='onboardingLeadText' textAlign='center'> {item.lead_text[0]}</Text>
-                                        <Text variant='onboardingLeadText' textAlign='center'>{item.lead_text[1]}</Text>
+                                        <Text variant='h1' textAlign='center' > {item.lead_text[0]}</Text>
+                                        <Text variant='h2' textAlign='center'>{item.lead_text[1]}</Text>
 
                                     </View>
-                                    <Text variant='onboardingSubText' marginVertical='sm' lineHeight={25} textAlign='center' >{item.sub_text}</Text>
+                                    <Text variant='bodySmall' marginVertical='sm' lineHeight={25} textAlign='center' >{item.sub_text}</Text>
 
                                 </Box>
                             )}
                         />
 
-                        <Box alignSelf='stretch' paddingHorizontal='lsx'>
+                        <Box alignSelf='stretch' paddingHorizontal='lsx' marginVertical='m'>
                             <Button label='Get Started' onPress={() => handleGetStarted(navigation)} />
                         </Box>
-                        <Text variant='onboardingSubText' marginVertical='sm' lineHeight={25} textAlign='center'>Already have an account? <Text color='primary' textDecorationStyle='dashed' textDecorationLine='underline'>Sign In</Text></Text>
+                        <Text variant='bodySmall' marginVertical='sm' lineHeight={25} textAlign='center'>Already have an account? <Text color='primary' textDecorationStyle='dashed' textDecorationLine='underline'>Sign In</Text></Text>
 
                     </Box>
 
