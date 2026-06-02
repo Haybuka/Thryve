@@ -12,8 +12,8 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import SplashScreen from '@/screen/SplashScreen';
-import OnboardingNavigator from './src/navigation/onboarding';
-// import MainNavigator from '@/navigation/main';
+// import OnboardingNavigator from './src/navigation/onboarding';
+import MainNavigator from '@/navigation/main';
 import RootThemeProvider from '@/providers/ThemeProvider';
 
 function App() {
@@ -41,8 +41,8 @@ function AppContent() {
             templateFileName="App.tsx"
             safeAreaInsets={safeAreaInsets}
           /> */}
-              <OnboardingNavigator />
-              {/* <MainNavigator /> */}
+              {/* <OnboardingNavigator /> */}
+              <MainNavigator />
             </SplashScreen>
           </View>
         </NavigationContainer>
