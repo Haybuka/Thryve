@@ -2,11 +2,11 @@ import { ImageBackground, StyleSheet, View } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import type { ICarouselInstance } from "react-native-reanimated-carousel";
 import React, { useRef, useState } from 'react';
-import Button from '@/components/Button';
-import Text from '@/components/Text';
-import AuthCarouselIndicator from '@/components/AuthCarouselIndicator';
-import Container from '@/components/Container';
-import Box from '@/components/Box';
+import Button from '@/atoms/Button';
+import Text from '@/atoms/Text';
+import AuthCarouselIndicator from '@/atoms/AuthCarouselIndicator';
+import Container from '@/templates/Container';
+import Box from '@/atoms/Box';
 import { GetStartedScreenProps } from '@/navigation/onboarding/types';
 
 
@@ -41,9 +41,10 @@ const GetStarted = ({ navigation }: GetStartedScreenProps) => {
         },
     ]
 
-    const handleGetStarted = () => {
-        navigation.navigate('StageSelection');
+    const handleGetStarted = (route: GetStartedScreenProps['navigation']) => {
+        route.navigate('StageSelection');
     }
+
     return (
 
         <ImageBackground source={backgroundImage} resizeMode="cover" style={styles.image}>
@@ -82,7 +83,7 @@ const GetStarted = ({ navigation }: GetStartedScreenProps) => {
                         />
 
                         <Box alignSelf='stretch' paddingHorizontal='lsx'>
-                            <Button label='Get Started' onPress={handleGetStarted} />
+                            <Button label='Get Started' onPress={() => handleGetStarted(navigation)} />
                         </Box>
                         <Text variant='onboardingSubText' marginVertical='sm' lineHeight={25} textAlign='center'>Already have an account? <Text color='primary' textDecorationStyle='dashed' textDecorationLine='underline'>Sign In</Text></Text>
 

@@ -13,10 +13,11 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 // import SplashScreen from './src/navigation';
-import OnboardingNavigator from './src/navigation/onboarding';
-import ThemeProvider from '@/config/theme/Provider';
+// import OnboardingNavigator from './src/navigation/onboarding';
+// import ThemeProvider from '@/providers/ThemeProvider';
 import SplashScreen from '@/screen/SplashScreen';
 import MainNavigator from '@/navigation/main';
+import RootThemeProvider from '@/providers/ThemeProvider';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -35,7 +36,7 @@ function AppContent() {
 
   return (
     <GestureHandlerRootView>
-      <ThemeProvider>
+      <RootThemeProvider>
         <NavigationContainer>
           <View style={styles.container}>
 
@@ -49,7 +50,7 @@ function AppContent() {
             </SplashScreen>
           </View>
         </NavigationContainer>
-      </ThemeProvider>
+      </RootThemeProvider>
     </GestureHandlerRootView>
 
   );

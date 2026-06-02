@@ -1,46 +1,71 @@
-import React, { useEffect, useState } from 'react'
-import { Image, StyleSheet, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, View } from 'react-native';
+import Animated, {
+    useAnimatedStyle,
+    useSharedValue,
+    withTiming,
+} from 'react-native-reanimated';
 
 const SplashScreen = ({ children }: React.PropsWithChildren) => {
+    const [done, setDone] = useState(false);
 
-    const [isSplashVisible, setIsSplashVisible] = useState(false);
-    const [showRealSplash, setShowRealSplash] = useState(true);
+    const logoOpacity = useSharedValue(1);
+    const fullOpacity = useSharedValue(0);
+    const translateY = useSharedValue(500);
 
+    const logoStyle = useAnimatedStyle(() => ({
+        opacity: logoOpacity.value,
+    }));
 
-    useEffect(() => {
-        let timeout = setTimeout(() => {
-            setIsSplashVisible(true);
-        }, 8000);
-        let splashtimeout = setTimeout(() => {
-            setShowRealSplash(false);
+    const fullStyle = useAnimatedStyle(() => ({
+        opacity: fullOpacity.value,
+        transform: [{ translateY: translateY.value }],
+    }));
+
+    const runTimer = () => {
+        return setTimeout(() => {
+            // fade out first logo
+            logoOpacity.value = withTiming(0, { duration: 200 });
+
+            // fade + slide in second logo
+            fullOpacity.value = withTiming(1, { duration: 300 });
+            translateY.value = withTiming(-100, { duration: 300 });
+
+            // finish splash
+            setTimeout(() => {
+                setDone(true);
+            }, 500);
         }, 4000);
-
-        return () => {
-            clearTimeout(timeout)
-            clearTimeout(splashtimeout)
-        }
-            ;
-    }, [])
-
-    if (isSplashVisible) {
-        return <>{children}</>
     }
+    
+    useEffect(() => {
+        const timer = runTimer();
+        return () => clearTimeout(timer);
+    }, []);
 
+    if (done) {
+        return <>{children}</>;
+    }
 
     return (
         <View style={styles.container}>
-            {showRealSplash ? (
-                <Image source={require('@/assets/images/splashScreen/preg_logo.png')} style={styles.preg_logo} />
-            ) : (
-                <Image source={require('@/assets/images/splashScreen/preg_logo_full.png')} style={styles.preg_logo_full} />
-            )}
+            {/* First image */}
+            <Animated.Image
+                source={require('@/assets/images/splashScreen/preg_logo.png')}
+                style={[styles.preg_logo, logoStyle]}
+            />
 
-
+            {/* Second image */}
+            <Animated.Image
+                source={require('@/assets/images/splashScreen/preg_logo_full.png')}
+                style={[styles.preg_logo_full, fullStyle]}
+            />
         </View>
-    )
-}
+    );
+};
 
 export default SplashScreen;
+
 
 const styles = StyleSheet.create({
     container: {

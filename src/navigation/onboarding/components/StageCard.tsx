@@ -1,11 +1,11 @@
 import { Pressable } from 'react-native'
 import React from 'react'
 import AuthIconSelect from './AuthIconSelect';
-import IconBox from '@/components/IconBox';
-import Box from '@/components/Box';
-import { StageBox } from '@/components/Card';
-import RadioIndicator from '@/components/RadioIndicator';
-import Text from '@/components/Text';
+import IconBox from '@/atoms/IconBox';
+import Box from '@/atoms/Box';
+import RadioIndicator from '@/atoms/RadioIndicator';
+import Text from '@/atoms/Text';
+import StageBox from '@/atoms/StageBox';
 
 
 type StageCardProps = {

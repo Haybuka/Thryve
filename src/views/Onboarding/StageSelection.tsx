@@ -2,10 +2,10 @@ import { Image, StyleSheet, } from 'react-native'
 import React from 'react'
 import { StageSelectionScreenProps } from '../../navigation/onboarding/types'
 import StageCard from '../../navigation/onboarding/components/StageCard'
-import Button from '@/components/Button'
-import Container from '@/components/Container'
-import Box from '@/components/Box'
-import Text from '@/components/Text'
+import Button from '@/atoms/Button'
+import Container from '@/templates/Container'
+import Box from '@/atoms/Box'
+import Text from '@/atoms/Text'
 
 
 type Stage = {

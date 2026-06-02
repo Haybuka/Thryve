@@ -1,8 +1,8 @@
 import React from 'react';
 import { createRestyleComponent, createVariant, VariantProps } from '@shopify/restyle';
 import { Theme } from '@/config/theme';
-import Box from '@/components/Box';
 import { StyleSheet } from 'react-native';
+import Box from '@/components/atoms/Box';
 
 type StageBoxProps =
   VariantProps<Theme, 'boxVariants'> &

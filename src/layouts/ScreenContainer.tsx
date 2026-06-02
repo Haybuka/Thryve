@@ -10,15 +10,15 @@ type Props = React.PropsWithChildren<{
     backgroundColor? : string
 }>;
 
-const Container: React.FC<Props> = ({ children,backgroundColor }) => {
+const Container: React.FC<Props> = ({ children,backgroundColor = '#fff' }) => {
   return (
-    <SafeAreaView style={[styles.container, {backgroundColor}]} edges={['top', 'bottom']}>
+    <SafeAreaView style={[styles.safeArea, {backgroundColor}]} edges={['top', 'bottom']}>
       
 
       <KeyboardAvoidingView
-        style={styles.container}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 0}
+        style={styles.content}
       >
         {children}
       </KeyboardAvoidingView>
@@ -29,7 +29,11 @@ const Container: React.FC<Props> = ({ children,backgroundColor }) => {
 export default Container;
 
 const styles = StyleSheet.create({
-  container: {
+  safeArea: {
+    flex: 1,
+    paddingHorizontal : 24
+  },
+  content: {
     flex: 1,
   },
 });
