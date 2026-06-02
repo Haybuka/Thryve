@@ -20,13 +20,14 @@ type Props = {
   selected?: boolean;
   label?: string;
   onPress?: () => void;
-  width? :number, height? : number // optional override for outer circle
+  width?: number, height?: number // optional override for outer circle
 };
 
-const RadioIndicator: React.FC<Props> = ({ selected, label, onPress, width=16,height=16, }) => {
+const RadioIndicator: React.FC<Props> = ({ selected, label, onPress, width = 16, height = 16, }) => {
 
   return (
     <RadioBox
+      testID="radio-indicator"
       variant="radio"
       onPress={onPress}
       hitSlop={10}
@@ -35,11 +36,12 @@ const RadioIndicator: React.FC<Props> = ({ selected, label, onPress, width=16,he
       accessibilityState={{ selected }}
       accessibilityLabel={label}
       accessibilityHint="Double tap to select"
-    // eslint-disable-next-line react-native/no-inline-styles
-    style={{width,height,borderRadius : height /2, borderColor : selected ? 'pink' : 'muted'}}
+      // eslint-disable-next-line react-native/no-inline-styles
+      style={{ width, height, borderRadius: height / 2, borderColor: selected ? 'pink' : 'muted' }}
     >
       {selected && (
         <RadioBox
+          testID="radio-indicator-inner"
           variant="radioInner"
         />
       )}

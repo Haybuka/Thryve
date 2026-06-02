@@ -17,13 +17,14 @@ const HomeScreen = ({ navigation }: Props) => {
     // navigation.getParent()?.navigate('Settings')
     // navigation.navigate('Settings');
   }
+
   return (
     <Container>
       <Box flex={1}>
         <Box flexDirection='row' justifyContent='space-between' alignItems='center' paddingVertical='l'>
           <Box>
-            <Text variant='h1'>Hello Jane,</Text>
-            <Text variant='body'>{`It’s Day 15, your fertile window is open`}</Text>
+            <Text variant='bodyLarge'>Hello Jane,</Text>
+            <Text variant='caption'>{`It’s Day 15, your fertile window is open`}</Text>
           </Box>
           <BellBlackIcon />
         </Box>

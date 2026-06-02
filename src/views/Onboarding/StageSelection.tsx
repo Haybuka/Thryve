@@ -4,6 +4,8 @@ import Container from '@/layouts/ScreenContainer'
 import {Box, Text, Button} from '@/components/atoms'
 import StageCard from '@/navigation/onboarding/components/StageCard'
 import { StageSelectionScreenProps } from '@/navigation/onboarding/types'
+import AnimatedStageCard from '@/components/atoms/AnimatedStageCard'
+
 
 type Stage = {
     id: number;
@@ -44,11 +46,13 @@ const StageSelection = ({ navigation }: StageSelectionScreenProps) => {
     const handlePageNext = () => {
         navigation.navigate('Home')
     }
+
+
     return (
 
         <Container>
 
-            <Box flex={1} padding='lsx' backgroundColor='authBackgroundSecondary'>
+            <Box flex={1}>
                 <Box justifyContent='center' alignItems='center'>
 
                     <Box padding='l' justifyContent='center' alignItems='center' >
@@ -58,8 +62,10 @@ const StageSelection = ({ navigation }: StageSelectionScreenProps) => {
                     </Box>
                 </Box>
                 <Box marginVertical='xl'>
-                    {stages.map((stage) => (
-                        <StageCard key={stage.id} stage={stage} selectedStage={selectedStage} handleCardSelected={handleStageSelect} />
+                    {stages.map((stage, index) => (
+                        <AnimatedStageCard key={stage.id} index={index}>
+                            <StageCard stage={stage} selectedStage={selectedStage} handleCardSelected={handleStageSelect} />
+                        </AnimatedStageCard>
                     ))}
                 </Box>
 

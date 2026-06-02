@@ -1,7 +1,6 @@
 import React from 'react';
 import { createRestyleComponent, createVariant, VariantProps } from '@shopify/restyle';
 import { Theme } from '@/config/theme';
-import { StyleSheet } from 'react-native';
 import Box from '@/components/atoms/Box';
 
 type StageBoxProps =
@@ -19,23 +18,17 @@ const StageBox: React.FC<StageBoxProps> = ({ active, ...props }) => {
   return (
     <StageBoxBase
       shadowColor={'shadow'}
-      style={styles.items}
-      {...props}
+      elevation={2}
+      shadowRadius={1}
+      shadowOpacity={0.15}
+      shadowOffset={{ width: 0, height: 1 }}
       borderWidth={active ? 2 : 0}
       borderColor={active ? 'pink' : 'transparent'}
+      backgroundColor='white'
+      {...props}
 
     />
   );
 };
 
 export default StageBox;
-
-const styles = StyleSheet.create({
-  items: {
-
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.15,
-    shadowRadius: 2.84,
-    elevation: 3,
-  }
-})

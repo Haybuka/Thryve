@@ -28,8 +28,8 @@ const StageCard = ({ stage, selectedStage, handleCardSelected }: StageCardProps)
                     <AuthIconSelect icon={stage.icon} />
                 </IconBox >
                 <Box flex={1}>
-                    <Text variant='h2' fontWeight={'bold'} color='blueSecondary' marginVertical={'xs'} >{stage.title}</Text>
-                    <Text color="blueMuted" fontSize={12} >{stage.description} </Text>
+                    <Text variant='body' fontWeight={'bold'} color='blueSecondary' marginVertical={'xs'} >{stage.title}</Text>
+                    <Text color="blueMuted" variant='caption' >{stage.description} </Text>
                 </Box>
                 <RadioIndicator width={20} height={20} selected={selectedStage.id === stage.id} />
             </StageBox>
