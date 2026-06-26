@@ -2,31 +2,33 @@ const palette = {
     pink: '#FF6F91',
     pinkMuted: '#FFE2E9',
     pinkDisabled: '#FFB7C8',
-    pinkSecondary : '#FFF0F3',
+    pinkSecondary: '#FFF0F3',
 
     blue: '#001739',
     bluePrimary: '#001C44',
     blueSecondary: '#001739',
-    blueBase : '#00132D',
+    blueBase: '#00132D',
     blueMuted: '#556882',
 
+    blue100: '#102B45',
     secondary: '#FF9671',
     background: '#00000063',
-    backgroundSecondary : '#FAFAFA',
+    backgroundSecondary: '#FAFAFA',
 
     overlayBackground: '#00000063',
 
-    gray : '',
+    gray: '',
     grayDisabled: '#EEE',
+    gray100: '#DBDBDB',
 
     white: '#FFFFFF',
     whiteSecondary: '#CCCCCC',
-
+    white100: '#F5F5F5',
     black: '#000000',
     blackSecondary: '#060606',
-    shadow : '#00000071',
+    shadow: '#00000071',
 
-    transparent : 'none'
+    transparent: 'none'
 }
 
 export default palette;
