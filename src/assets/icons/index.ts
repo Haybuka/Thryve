@@ -1,20 +1,22 @@
-import AuthCalender from './svg/authCalender.svg'
-import CalenderDark from './svg/calenderDark.svg'
 
-import AuthHeart from './svg/authHeart.svg'
 import AuthBaby from './svg/authBaby.svg'
+import AuthCalender from './svg/authCalender.svg'
+import AuthHeart from './svg/authHeart.svg'
 import BellBlackIcon from './svg/black-bell.svg'
-import HomeTab from './svg/tabHome.svg'
+import CalenderDark from './svg/calenderDark.svg'
 import ExerciseTab from './svg/exercise.svg'
 import ExerciseWhiteTab from './svg/exercise.svg'
+import HomeTab from './svg/tabHome.svg'
+import RedHeart from './svg/redHeart.svg'
 
 export {
-    AuthCalender,
-    CalenderDark,
-    AuthHeart,
     AuthBaby,
+    AuthCalender,
+    AuthHeart,
     BellBlackIcon,
-    HomeTab,
+    CalenderDark,
     ExerciseTab,
-    ExerciseWhiteTab
+    ExerciseWhiteTab,
+    HomeTab,
+    RedHeart
 }
