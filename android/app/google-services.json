@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "927804267771",
+    "project_id": "thrivelytics",
+    "storage_bucket": "thrivelytics.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927804267771:android:cea02966d82334b43aa45e",
+        "android_client_info": {
+          "package_name": "com.pregnancyapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCS7mucw2yNTXIMYbVGbMk3MxCftwSOBeY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
