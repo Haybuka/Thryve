@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
+    "android": "react-native run-android ",
     "ios": "react-native run-ios",
     "lint": "eslint .",
-    "start": "react-native start",
+    "start": "react-native start --reset-cache",
     "test": "jest",
-    "reset": "watchman watch-del-all && rm -rf node_modules && yarn cache clean && cd ios && rm -rf Pods Podfile.lock && cd .. && yarn install"
+    "reset": "watchman watch-del-all && rm -rf node_modules && yarn cache clean && cd ios && rm -rf Pods Podfile.lock && cd .. && yarn install --verbose"
   },
   "dependencies": {
     "@react-native-firebase/analytics": "^25.1.0",
@@ -23,7 +23,9 @@
     "react": "19.2.0",
     "react-native": "0.83.1",
     "react-native-calendars": "^1.1314.0",
+    "react-native-circular-progress": "^1.4.1",
     "react-native-gesture-handler": "^2.30.0",
+    "react-native-linear-gradient": "^2.8.3",
     "react-native-reanimated": "^4.2.1",
     "react-native-reanimated-carousel": "^4.0.3",
     "react-native-safe-area-context": "^5.6.2",
