@@ -1,6 +1,6 @@
 import React from 'react'
 import { Image, StyleSheet, } from 'react-native'
-import Container from '@/layouts/ScreenContainer'
+import Container from '@/components/templates/ScreenContainer'
 import {Box, Text, Button} from '@/components/atoms'
 import StageCard from '@/navigation/onboarding/components/StageCard'
 import { StageSelectionScreenProps } from '@/navigation/onboarding/types'

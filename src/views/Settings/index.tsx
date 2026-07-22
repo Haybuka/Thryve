@@ -2,7 +2,7 @@
 import React from 'react'
 
 import { SettingsScreenProps } from '@/navigation/main/types'
-import Container from '@/layouts/ScreenContainer'
+import Container from '@/components/templates/ScreenContainer'
 import {Box,Text,Button} from '@/components/atoms'
 
 const SettingsScreen = ({ navigation }: SettingsScreenProps) => {

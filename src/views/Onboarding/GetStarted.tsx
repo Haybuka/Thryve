@@ -3,7 +3,7 @@ import { ImageBackground, StyleSheet, View } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import type { ICarouselInstance } from "react-native-reanimated-carousel";
 import { GetStartedScreenProps } from '@/navigation/onboarding/types';
-import Container from '@/layouts/ScreenContainer';
+import Container from '@/components/templates/ScreenContainer';
 import { Button, Text, AuthCarouselIndicator, Box } from '@/components/atoms';
 
 

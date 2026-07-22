@@ -8,30 +8,47 @@ import React, {
 import {
   FlatList,
   StyleSheet,
-  TouchableOpacity,
 } from 'react-native';
 import dayjs from 'dayjs';
-
-import Container from '@/layouts/ScreenContainer';
-import { Avatar, Box, Button, Text } from '@/components/atoms';
-import { BellBlackIcon, CalenderDark, RedHeart } from '@/assets/icons';
+import { Avatar, Box, Text } from '@/components/atoms';
+import { BellBlackIcon, CalenderDark, RedHeart, ResizedRedHeart, WhiteHeart } from '@/assets/icons';
 import { HomeScreenNavigationProp } from '@/navigation/main/HomeBottomTab/types';
 import { generateMonthDays } from '@/utils';
-import { DatePill } from '@/molecules';
-import LinearGradient from 'react-native-linear-gradient';
-import FertilityUi from '@/components/FertilityUi';
+import GradientBox from '@/components/home/GradientBox';
+import { DatePill } from '@/components/molecules';
+import TabView from '@/components/molecules/TabView';
+import ParentScrollView from '@/components/templates/ParentScrollView';
+import HomeCardView from '@/components/home/HomeCard';
+
 type Props = {
   navigation: HomeScreenNavigationProp;
 };
 
 const ITEM_WIDTH = 60;
 const ITEM_GAP = 20;
-const FERTILITY_UI_VIEW = 150
+
 const ItemSeparator = () => <Box width={ITEM_GAP} />;
 
-const HomeScreen = ({ navigation }: Props) => {
-  const flatListRef = useRef<FlatList>(null);
+const PregnancyPrepTab = () => <Text>Pregnancy Prep</Text>;
 
+const HomeScreen = ({}:Props) => {
+  const flatListRef = useRef<FlatList>(null);
+  const tabItems = [
+    {
+      id: 0,
+      label: 'Wellness Check-in',
+      activeIcon: WhiteHeart,
+      inactiveIcon: ResizedRedHeart,
+      component: HomeCardView
+    },
+    {
+      id: 1,
+      label: 'Pregnancy Prep',
+      activeIcon: WhiteHeart,
+      inactiveIcon: ResizedRedHeart,
+      component: PregnancyPrepTab
+    }
+  ]
   const [currentDate] = useState(() => dayjs());
 
   const todayIso = currentDate.format('YYYY-MM-DD');
@@ -99,14 +116,11 @@ const HomeScreen = ({ navigation }: Props) => {
     [handleDatePress, selectedDate],
   );
 
-  const handleSettingRoute = () => {
-    console.log(navigation.getParent());
-  };
 
   const image = require('@/assets/images/avatarimg.jpg')
-  
+
   return (
-    <Container>
+    <ParentScrollView backgroundColor='backgroundSecondary'>
       <Box >
         <Box
           flexDirection="row"
@@ -180,47 +194,19 @@ const HomeScreen = ({ navigation }: Props) => {
             </Box>
             <Text color='black' variant='caption'> Day 15 of 28</Text>
           </Box>
+          <GradientBox />
 
-          <LinearGradient
-            colors={['#FF8086', '#FFCBCE', '#FF8086']}
-            locations={[0, 0.56, 1]}
-            start={{ x: 0, y: 0.5 }}
-            end={{ x: 1, y: 0.5 }}
-            style={styles.gradientBox}
-          >
-            <Box borderRadius={6} height={FERTILITY_UI_VIEW} flexDirection='row' alignItems='center' justifyContent='space-between' px='lsx'>
-              <Box>
-                <Box mb='m'>
-                  <Text color='black' variant='h4' fontSize={18}>{`“Today is within your`}</Text>
-                  <Text color='black' variant='h4' fontSize={18}>{`fertile window”`}</Text>
-                  <Text color='black' variant='caption' my='s'>- Ovulation expected in 2 days</Text>
-                </Box>
-                <Box flexDirection='row' gap='s'>
-                  <TouchableOpacity activeOpacity={0.5}>
-                    <Box backgroundColor='white' p='s' borderRadius={4}>
-                      <Text variant='caption' color='black' fontSize={8}>Log Intimacy</Text>
-                    </Box>
-                  </TouchableOpacity>
-                  <TouchableOpacity activeOpacity={0.5}>
-                    <Box backgroundColor='white' p='s' borderRadius={4}>
-                      <Text variant='caption' color='black' fontSize={8}>View Full Cycle</Text>
-                    </Box>
-                  </TouchableOpacity>
-
-                </Box>
-              </Box>
-              <FertilityUi value={80} fertilityUiHeight={FERTILITY_UI_VIEW}/>
-            </Box>
-          </LinearGradient>
         </Box>
 
-        <Button
+        <TabView tabs={tabItems} style={styles.tabContainer} />
+
+        {/* <Button
           label="Settings"
           onPress={handleSettingRoute}
-        />
+        /> */}
 
       </Box>
-    </Container>
+    </ParentScrollView>
   );
 };
 
@@ -231,5 +217,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     marginVertical: 20,
   },
-  gradientBox: { borderRadius: 6, marginTop: 15, marginBottom: 23.64, }
+  tabContainer: {
+    padding: 12
+  }
 });
