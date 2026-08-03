@@ -20,7 +20,7 @@ const homeCards: HomeCardProps[] = [
     {
         id: 1,
         title: "Mood",
-        value: "Calm 😊",
+        value: "Calm",
         description:
             "Stay calm eases your mind, and makes you remain positive",
         icon: <WhiteHeart />,
@@ -47,8 +47,7 @@ const homeCards: HomeCardProps[] = [
         value: "6h 30m",
         description:
             `A good amount of sleep, helps 
-the brain relax, and crushes 
-anxiety`,
+the brain relax.`,
         icon: <Steps />,
         styles: {
             iconBg: 'secondary100',
@@ -58,7 +57,7 @@ anxiety`,
     {
         id: 4,
         title: "Breathe",
-        value: "Calm 😊",
+        value: "Calm",
         description:
             "Stay calm eases your mind, and makes you remain positive",
         icon: <HeartOutline />,
@@ -70,7 +69,7 @@ anxiety`,
     {
         id: 5,
         title: "Sleep",
-        value: "Calm 😊",
+        value: "Calm",
         description:
             "Stay calm eases your mind, and makes you remain positive",
         icon: <Moon />,

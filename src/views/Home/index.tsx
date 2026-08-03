@@ -31,7 +31,7 @@ const ItemSeparator = () => <Box width={ITEM_GAP} />;
 
 const PregnancyPrepTab = () => <Text>Pregnancy Prep</Text>;
 
-const HomeScreen = ({}:Props) => {
+const HomeScreen = ({ }: Props) => {
   const flatListRef = useRef<FlatList>(null);
   const tabItems = [
     {
@@ -198,7 +198,9 @@ const HomeScreen = ({}:Props) => {
 
         </Box>
 
-        <TabView tabs={tabItems} style={styles.tabContainer} />
+        <Box mb='l'>
+          <TabView tabs={tabItems} style={styles.tabContainer} />
+        </Box>
 
         {/* <Button
           label="Settings"

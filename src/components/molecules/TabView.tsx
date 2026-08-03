@@ -27,7 +27,7 @@ const TabView = ({ tabs,style }: TabViewProps) => {
     const ActiveIdComponent = activeTab.component;
     return (
         <Box style={style} borderRadius={16} backgroundColor='white'>
-            <Box backgroundColor='white100' flexDirection='row' justifyContent='space-between' alignItems='center' mt='m' mb='lsx' borderRadius={16} overflow='hidden'>
+            <Box backgroundColor='white100' flexDirection='row' justifyContent='space-between' alignItems='center' mt='s' mb='lsx' borderRadius={16} overflow='hidden'>
                 {tabs?.map(tab => (
                     <Pressable key={tab.id} onPress={() => handleActiveView(tab)} style={{flex:1}}>
                         <Box  backgroundColor={activeId === tab.id ? 'pink' : 'transparent'} px='sm' py='sm' flexDirection='row' gap='xs' alignItems='center' justifyContent='center'>
