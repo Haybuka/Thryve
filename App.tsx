@@ -11,10 +11,11 @@ import {
 } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import SplashScreen from '@/screen/SplashScreen';
+// import SplashScreen from '@/screen/SplashScreen';
 // import OnboardingNavigator from './src/navigation/onboarding';
 import MainNavigator from '@/navigation/main';
 import RootThemeProvider from '@/providers/ThemeProvider';
+import SplashScreen from '@/components/screens/SplashScreen';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -28,7 +29,6 @@ function App() {
 }
 
 function AppContent() {
-  // const safeAreaInsets = useSafeAreaInsets();
 
   return (
     <GestureHandlerRootView>

@@ -1,11 +1,11 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from '@/views/Home';
-import CalenderScreen from '@/views/Calender';
-import ExerciseScreen from '@/views/Exercise';
-import { HomeBottomTabParamList } from '@/navigation/main/HomeBottomTab/types';
+import { BottomTabParamList } from '@/navigation/main/HomeBottomTab/types';
 import { HomeTabIcon, ExerciseTabIcon, CalenderTabIcon } from './TabIcons/';
+import HomeNavigator from '@/navigation/main/HomeNavigator';
+import ExerciseScreen from '@/views/Exercise';
+import CalenderScreen from '@/views/Calender';
 
-const Tab = createBottomTabNavigator<HomeBottomTabParamList>();
+const Tab = createBottomTabNavigator<BottomTabParamList>();
 
 export default function TabNavigator() {
   return (
@@ -19,7 +19,7 @@ export default function TabNavigator() {
     >
       <Tab.Screen
         name="Home"
-        component={HomeScreen}
+        component={HomeNavigator}
         options={{
           tabBarIcon: HomeTabIcon,
           tabBarActiveTintColor: '#E91E63',

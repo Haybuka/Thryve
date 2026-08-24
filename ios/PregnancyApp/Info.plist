@@ -52,4 +52,18 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>
+<key>MoEngage</key>
+<dict>
+    <key>WorkspaceId</key>
+    <string>OOL83SO4JY0462O6U3IPX5SD</string>
+
+    <key>DataCenter</key>
+    <integer>1</integer>
+
+    <key>IsSdkAutoInitialisationEnabled</key>
+    <true/>
+
+    <key>IsLoggingEnabled</key>
+    <true/>
+</dict>
 </plist>

@@ -32,6 +32,7 @@ const ItemSeparator = () => <Box width={ITEM_GAP} />;
 const PregnancyPrepTab = () => <Text>Pregnancy Prep</Text>;
 
 const HomeScreen = ({ }: Props) => {
+
   const flatListRef = useRef<FlatList>(null);
   const tabItems = [
     {
@@ -119,6 +120,7 @@ const HomeScreen = ({ }: Props) => {
 
   const image = require('@/assets/images/avatarimg.jpg')
 
+  
   return (
     <ParentScrollView backgroundColor='backgroundSecondary'>
       <Box >

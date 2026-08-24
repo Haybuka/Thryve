@@ -81,6 +81,53 @@ PODS:
   - hermes-engine (0.14.0):
     - hermes-engine/Pre-built (= 0.14.0)
   - hermes-engine/Pre-built (0.14.0)
+  - MoEngage-iOS-SDK (10.14.0):
+    - MoEngage-iOS-SDK/KMMedCore (= 10.14.0)
+  - MoEngage-iOS-SDK/Core (10.14.0):
+    - MoEngageCampaignsCore (= 1.01.5)
+    - MoEngageCore (= 10.09.0)
+    - MoEngageExtensionsIntegration (= 1.0.2)
+    - MoEngageMessaging (= 5.03.01)
+    - MoEngageSDK (= 10.01.4)
+    - MoEngageSecurity (= 2.00.3)
+  - MoEngage-iOS-SDK/InApps (10.14.0):
+    - MoEngage-iOS-SDK/Core
+    - MoEngageInApps (= 7.06.0)
+    - MoEngageTriggerEvaluator (= 2.00.5)
+  - MoEngage-iOS-SDK/KMMedCore (10.14.0):
+    - MoEngage-iOS-SDK/Core
+    - MoEngageKMMConditionEvaluator (= 1.0.1)
+  - MoEngage-iOS-SDK/RichNotification (10.14.0):
+    - MoEngage-iOS-SDK/Core
+    - MoEngageRichNotification (= 8.01.8)
+  - MoEngageCampaignsCore (1.01.5):
+    - MoEngageCore
+  - MoEngageCore (10.09.0):
+    - MoEngageSecurity
+  - MoEngageExtensionsIntegration (1.0.2):
+    - MoEngageMessaging
+  - MoEngageInApps (7.06.0):
+    - MoEngageCampaignsCore
+    - MoEngageCore
+    - MoEngageMessaging
+    - MoEngageTriggerEvaluator
+  - MoEngageKMMConditionEvaluator (1.0.1)
+  - MoEngageMessaging (5.03.01):
+    - MoEngageCampaignsCore
+    - MoEngageCore
+  - MoEngagePluginBase (6.10.0):
+    - MoEngage-iOS-SDK (= 10.14.0)
+    - MoEngage-iOS-SDK/InApps
+  - MoEngageRichNotification (8.01.8):
+    - MoEngageCampaignsCore
+    - MoEngageCore
+    - MoEngageMessaging
+  - MoEngageSDK (10.01.4):
+    - MoEngageCore
+    - MoEngageMessaging
+  - MoEngageSecurity (2.00.3)
+  - MoEngageTriggerEvaluator (2.00.5):
+    - MoEngageCore
   - nanopb (3.30910.0):
     - nanopb/decode (= 3.30910.0)
     - nanopb/encode (= 3.30910.0)
@@ -2615,6 +2662,37 @@ PODS:
     - React-perflogger (= 0.83.1)
     - React-utils (= 0.83.1)
     - SocketRocket
+  - ReactNativeMoEngage (12.9.0):
+    - boost
+    - DoubleConversion
+    - fast_float
+    - fmt
+    - glog
+    - hermes-engine
+    - MoEngage-iOS-SDK/RichNotification
+    - MoEngagePluginBase (= 6.10.0)
+    - RCT-Folly
+    - RCT-Folly/Fabric
+    - RCTRequired
+    - RCTTypeSafety
+    - React
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - SocketRocket
+    - Yoga
   - RNFBAnalytics (25.1.0):
     - boost
     - DoubleConversion
@@ -3084,6 +3162,7 @@ DEPENDENCIES:
   - ReactAppDependencyProvider (from `build/generated/ios/ReactAppDependencyProvider`)
   - ReactCodegen (from `build/generated/ios/ReactCodegen`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - ReactNativeMoEngage (from `../node_modules/react-native-moengage`)
   - "RNFBAnalytics (from `../node_modules/@react-native-firebase/analytics`)"
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
@@ -3103,6 +3182,18 @@ SPEC REPOS:
     - FirebaseInstallations
     - GoogleAppMeasurement
     - GoogleUtilities
+    - MoEngage-iOS-SDK
+    - MoEngageCampaignsCore
+    - MoEngageCore
+    - MoEngageExtensionsIntegration
+    - MoEngageInApps
+    - MoEngageKMMConditionEvaluator
+    - MoEngageMessaging
+    - MoEngagePluginBase
+    - MoEngageRichNotification
+    - MoEngageSDK
+    - MoEngageSecurity
+    - MoEngageTriggerEvaluator
     - nanopb
     - PromisesObjC
     - SocketRocket
@@ -3265,6 +3356,8 @@ EXTERNAL SOURCES:
     :path: build/generated/ios/ReactCodegen
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  ReactNativeMoEngage:
+    :path: "../node_modules/react-native-moengage"
   RNFBAnalytics:
     :path: "../node_modules/@react-native-firebase/analytics"
   RNFBApp:
@@ -3298,6 +3391,18 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: a6d37949071d456e9147dac6789c4342e0e7a8c5
   GoogleUtilities: 766ace00c6b10d8148408f329d10c4f051931850
   hermes-engine: c31d7413acd565694997b99b62af9853af61af6f
+  MoEngage-iOS-SDK: 329debb61c319e595173aee0ada83a7eb87e3e79
+  MoEngageCampaignsCore: a5c487dc7b77df91492bedcc6cab5e0ed5a5377e
+  MoEngageCore: c7ce2ae05b9715c5f90a376897490d56ef82fd88
+  MoEngageExtensionsIntegration: bef5df778123b7cc4c99f4f2d8ed977cf21b0da1
+  MoEngageInApps: cd29d8af166f5b0016119fbb5b54474a6361f86e
+  MoEngageKMMConditionEvaluator: 5006d6234e85d9754904abb83f41a2c49a224b66
+  MoEngageMessaging: dcd841bbe40ed464c7fffbc83faedc30485c3700
+  MoEngagePluginBase: f2a8e21e462310b207d1ece5c798f2b7ba98a3c7
+  MoEngageRichNotification: 758b7dacfee8fa401d2eaa8950e9566cf42df348
+  MoEngageSDK: 98ae37967aecac83378a2e29e561c25038b47869
+  MoEngageSecurity: 14012eab446ddc1bcfbc2da9e6214114636c6a91
+  MoEngageTriggerEvaluator: 39e5d02319866411b22f4a339c873d9d87770c76
   nanopb: fad817b59e0457d11a5dfbde799381cd727c1275
   PromisesObjC: 752c3227f599e3467650e47ea36f433eeb10c273
   RCT-Folly: 846fda9475e61ec7bcbf8a3fe81edfcaeb090669
@@ -3370,6 +3475,7 @@ SPEC CHECKSUMS:
   ReactAppDependencyProvider: 0eb286cc274abb059ee601b862ebddac2e681d01
   ReactCodegen: d663254bf59e57e5ed7c65638bd45f358a373bba
   ReactCommon: 15e1e727fa34f760beb7dd52928687fda8edf8dc
+  ReactNativeMoEngage: d17c65cb6025d94324b9aa1efe300d539b77400d
   RNFBAnalytics: d3a9d865ce535120b9c88a10c68d639d0f4fac74
   RNFBApp: cec9fe4fe0e6ccd8e2359aa8f6dc41fa16ff8cd9
   RNGestureHandler: c6327cf6e2bd384dc90351ccfff0da8142d62f54
