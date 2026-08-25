@@ -8,10 +8,5 @@ export type MainStackParamList = {
     Settings: undefined;
 }
 
-export type HomeStackParam = {
-    Dashboard: undefined;
-    Movement: undefined;
-
-}
 
 export type SettingsScreenProps = NativeStackScreenProps<MainStackParamList, 'Settings'>; 
